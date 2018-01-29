@@ -1,92 +1,95 @@
-# Welcome!
+# Bienvenue!
 
-This short playground will give you some fundamentals about graph theory: What graphs, nodes and edges are, and how can they be used to model information and solve problems.
+Ce petit exercice vous donnera quelques notions de base sur la théorie des graphes: qu'est ce qu'un graphe, un nœud ou encore une arête, et comment peuvent-ils être utilisés pour modéliser l'information et résoudre des problèmes.
 
-Want to help with more content or fixing a mistake? [Find this Playground in Github!](https://github.com/Racso/playground-NpnXDluI)
+Vous voulez aider en apportant plus de contenu ou en corrigeant une erreur? [Retrouvez cette exercice sur Github](https://github.com/estebanadams/playground-ZJBISUmK)
 
-# Prerequisites
-* None.
+# Prérequis
+* Aucun.
 
-# Graphs, nodes and edges
+# Graphe, nœuds et arêtes
 
-Look at the following image:
+Regardez l'image suivante:
 
-![Graph example](cities.png "")
+![Example de graphe](cities.png "")
 
-The image represents some Colombian cities: Cartagena, Bucaramanga, Medellín, Bogotá, among others. Each circle is a city. The lines connecting the circles represent commercial flights that you can take between cities. For example, you can fly from Bucaramanga (BUC) to Bogotá (BOG), as those cities are connected with a line, but you can't fly from Pasto (PAS) to Leticia (LET) because they aren't connected.
+L'image représente quelques villes colombiennes: Carthagène, Bucaramanga, Medellín, Bogota, entre autres. Chaque cercle est une ville. Les lignes reliant les cercles représentent des vols commerciaux que vous pouvez prendre entre les villes. Par exemple, vous pouvez voler de Bucaramanga (BUC) à Bogotá (BOG), car ces villes sont connectées avec une ligne, mais vous ne pouvez pas voler de Pasto (PAS) à Leticia (LET) parce qu'elles ne sont pas connectées.
 
-Easy, right? Well, that's a graph, and they are indeed easy to understand. **Graphs** are structures that allow us to model relationships between elements. In this case, we used a graph to model flight connections between cities.
+Facile, non? Eh bien, c'est un graphe, et ils sont faciles à comprendre. **Les graphe** sont des structures qui nous permettent de modéliser les relations entre les éléments. Dans ce cas, nous avons utilisé un graphe pour modéliser les connexions de vol entre les villes.
 
-Graphs are composed of two kind of elements:
-1. **Vertices or nodes**, which represent elements. In the image, the circles are the nodes, each node representing a city.
-2. **Edges**, which represent relationships between elements. In the image, the lines are the edges, each edge representing a flight connection between cities.
+Les graphes sont composés de deux types d'éléments:
+1. ** Sommets ou nœuds **, qui représentent des éléments. Dans l'image, les cercles sont les noeuds, chaque noeud représentant une ville.
+2. ** Arêtes **, qui représentent les relations entre les éléments. Dans l'image, les lignes sont les arêtes, chaque arête représentant une liaison aérienne entre les villes.
 
-Each edge connects exactly two nodes. This means that you'll never find an edge with one side pointing to nowhere.
+Chaque arête connecte exactement deux nœuds. Cela signifie que vous ne trouverez jamais une arête pointant dans le vide.
 
-We say that two nodes are neighbors if there is an edge connecting them. In the example, Bucaramanga (BUC) and Bogotá (BOG) are neighbors, but Pasto (PAS) and Leticia (LET) are not neighbors.
+On dit que deux nœuds sont voisins si une arête les relie. Dans l'exemple, Bucaramanga (BUC) et Bogotá (BOG) sont voisins, mais Pasto (PAS) et Leticia (LET) ne le sont pas.
 
-?[How many neighbors does node BUC have?]
+?[Combien de voisins le nœud BUC a-t-il?]
 -[ ] 3
 -[ ] 6
 -[x] 4
 -[ ] 5
 
-A graph can be drawn in different ways without changing it at all. How and where you draw the nodes and edges of a graph doesn't matter; what matters is what nodes does the graph contain and how are they connected. For example, our cities graph can be redrawn in the following way, without changing it:
+Un graphe peut être dessiné de différentes manières tout en gardant son intégrité. Comment et où vous dessinez les nœuds et les bords d'un graphe n'a pas d'importance; ce qui compte, c'est ce que les nœuds contiennent et comment sont-ils connectés. Par exemple, notre graphe de villes peut être redessiné de la manière suivante, sans le modifier:
 
-![Graph example, drawn in another way](cities-2.png "")
+![Example de graphe , dessiné d'une autre manière](cities-2.png "")
 
-Based on a graph, you can easily calculate things about the situation you're modelling. For small graphs, you can make it by hand. For bigger graphs, you can code simple programs or use well-known algorithms to tackle the problem. Try solving the following questions about our cities graph:
+En partant d'un graphe, vous pouvez facilement calculer des choses sur la situation que vous modélisez. Pour les petits graphes, vous pouvez le faire à la main. Pour les graphes plus grands, vous pouvez coder des programmes simples ou utiliser des algorithmes connus pour résoudre le problème. Essayez de résoudre les questions suivantes sur le graphe des villes:
 
-?[How many cities are there?]
+?[Combien de villes y a-t-il?]
 -[x] 10
 -[ ] 9
 -[ ] 8
 -[ ] 11
 
-?[If I want to fly from Cartagena (CAR) to Pasto (PAS), What's the MINIMUM amount of flights that I need to take?]
+?[Si je veux voler de Carthagène (CAR) à Pasto (PAS), quel est le nombre minimum de vols que je dois prendre?]
 -[x] 3
 -[ ] 2
 -[ ] 4
 -[ ] 5
 
-# Loops and parallel edges
+# Boucles et arêtes parallèles
 
-Our cities graph is a **simple graph**, as it doesn't have **"loops"** or **"parallel edges"**. Let's see what those are. The following graph is **non-simple**:
+Notre graphe des villes est un **graphe** simple, car il n'a pas de **"boucles"** ou **"d'arêtes parallèles"**. Voyons voir ce que c'est. Le graphe suivant est **non simple**:
 
-![Non simple graph](nosimple.png "")
+![Graphe Non simple](nosimple.png "")
 
-In this graph, there's an edge connecting node 2 with itself. That edge is a loop. In other words, a **loop** is an edge that starts and finishes in the same node. That node is connected to itself, and therefore is its own neighbor.
+Dans ce graphe, il y a une arête connectant le nœud 2 avec lui-même. Cette arête est une boucle. En d'autres termes, une **boucle** est une arête qui commence et se termine sur un même nœud. Ce nœud est connecté à lui-même, et est donc son propre voisin.
 
-You can also see that nodes 1 and 3 are connected by two edges. Those edges are "parallel edges", or "multiple edges". In other words, several edges are **parallel edges** if they connect the same pair of nodes.
+Vous pouvez également voir que les nœuds 1 et 3 sont connectés par deux arêtes. Ces arêtes sont des "arêtes parallèles" ou des "arêtes multiples". En d'autres termes, des arêtes sont dites **arêtes parallèles** si elles connectent la même paire de nœuds.
 
-Loops and parallel edges are useful for certain, specific applications. However, for lots of real life applications (probably most of them), you don't want to have loops or parallel edges in your graphs. Graphs without loops or parallel edges are called **simple graphs**.
+Les boucles et les arêtes parallèles sont utiles pour certaines applications spécifiques. Cependant, pour beaucoup d'applications réelles (probablement la plupart d'entre elles), vous n'avez pas à avoir de boucles ou d'arêtes parallèles dans vos graphes. Les graphes sans boucles ou arêtes parallèles sont appelés **graphes simples**.
 
-# The degree of a node
-The **degree** of a node is the amount of edges incident on it. "Edges incident on a node" are edges that connect that node with another one (or itself, in the case of a loop), or edges that "touch" that node.
+# Le degré d'un noeud
 
-In a simple graph, the degree of a node is equal to the amount of neighbors it has. On the other hand, when a node has a loop, the loop adds 2 to the degree of the node.
+Le **degré** d'un nœud est la quantité d'arêtes qui lui sont incidentes. Les "arêtes incidentes sur un nœud" sont des arêtes qui relient ce nœud à un autre (ou à lui-même, dans le cas d'une boucle), ou à des arêtes qui "touchent" ce nœud.
 
-In our non-simple graph example above, the degrees of the nodes are the following:
+Dans un graphe simple, le degré d'un nœud est égal à la quantité de voisins qu'il a. D'un autre côté, lorsqu'un nœud a une boucle, la boucle ajoute 2 au degré du nœud.
+
+Dans notre exemple de graphe non simple ci-dessus, les degrés des nœuds sont les suivants:
 * deg(**1**) = 3
-* deg(**2**) = 3 (remember: the loop adds 2)
+* deg(**2**) = 3 (attention: une boucle compte double)
 * deg(**3**) = 2
 
-# Directed graphs
+# Graphe orienté
 
-Let's suppose we want to model some Twitter users with a graph. This is the information about the users:
+Supposons que nous voulions modéliser certains utilisateurs de Twitter avec un graphe. Voici les informations des utilisateurs:
 
-- Alice (A) follows Bob and Carol.
-- Bob (B) follows Alice.
-- Carol (C) follows Bob.
+- Alice (A) suit Bob et Carol.
+- Bob (B) suit Alice.
+- Carol (C) suit Bob.
 
-OK, cool. We can model people as nodes and "follows" as edges. However, this time we have an extra ingredient: direction.
+OK cool. Nous pouvons modéliser les personnes comme des nœuds et les «follows» comme des arêtes. Cependant, cette fois nous avons besoin d'un ingrédient supplémentaire: la direction.
 
 In Twitter, following a person goes in one direction: you may follow one person, but that person may or may not follow you back. In our example, Carol follows Bob, but Bob doesn't follow Carol back. Something similar happens with personal relationships in real life: you may like a person, but that person may or may not like you back.
 
-It is because of this asymmetry that our graph needs a way to convey who follows whom. This is done with **directed edges**:
+Sur Twitter, suivre une personne est asymétrique: vous pouvez suivre une personne, mais cette personne peut ou pas vous suivre. Dans notre exemple, Carol suit Bob, mais Bob ne suit pas Carol. Quelque chose de similaire se produit avec les relations personnelles dans la vraie vie: vous pouvez aimer une personne, mais cette personne peut ou pas vous aimer.
+
+C'est à cause de cette asymétrie que notre graphe a besoin d'un moyen de transmettre qui suit qui. Ceci est fait avec des **arêtes orientées (fléchées)**:
 
 ![Directed graph example](twitter.png "")
 
-Directed edges look like arrows. They have a starting node and an ending node. A graph with directed edges is called a **directed graph**.
+Les arêtes orientées ressemblent à des flèches. Elles ont un noeud de départ et un noeud de fin. Un graphe avec des arêtes orientées s'appelle un **graphe orienté**.
 
-Our directed graph easily shows us some information about our users. For example, it's clear that Alice and Bob follow each other, and that Bob is the person with the most followers (because two arrows point to B).
+Notre graphe orienté nous montre facilement quelques informations sur nos utilisateurs. Par exemple, il est clair qu'Alice et Bob se suivent, et que Bob est la personne qui a le plus de followers (parce que deux flèches pointent vers B).
