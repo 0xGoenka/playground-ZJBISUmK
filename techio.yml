@@ -2,7 +2,7 @@ title: Graph Theory Basics
 plan:
 - title: Notions de base
   statement: markdowns/basics.md
-- title: Representations
+- title: Représentations
   statement: markdowns/representations.md
 projects:
   python:
