@@ -1,6 +1,3 @@
-
-We already know what graphs are. Now, let's see how can we represent graphs in ways other than drawing. This will be useful if we want to work with graphs with a computer.
-
 Nous savons déjà ce que sont les graphes. Maintenant, voyons comment pouvons-nous représenter les graphes d'une manière autre qu'avec un dessin. Cela sera utile si nous voulons utiliser des graphes avec un ordinateur.
 
 # Liste d'adjacence
