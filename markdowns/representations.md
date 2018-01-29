@@ -1,13 +1,15 @@
 
 We already know what graphs are. Now, let's see how can we represent graphs in ways other than drawing. This will be useful if we want to work with graphs with a computer.
 
-# Adjacency List
+Nous savons déjà ce que sont les graphes. Maintenant, voyons comment pouvons-nous représenter les graphes d'une manière autre qu'avec un dessin. Cela sera utile si nous voulons utiliser des graphes avec un ordinateur.
 
-Remember our cities graph?
+# Liste d'adjacence
+
+Vous vous rappelez de notre graphe des villes?
 
 ![Graph example](cities.png "")
 
-Let's make a list of each node's neighbors:
+Faisons une liste des voisins de chaque noeud:
 
 * **CAR:** MED, BUC
 * **MED:** CAR, BUC, BUE, ARM, BOG
@@ -20,9 +22,9 @@ Let's make a list of each node's neighbors:
 * **PAS:** BUE, CAL
 * **LET:** CAL, YOP
 
-That's the **adjacency list** of the graph: a list of lists describing the neighbors of each node.
+C'est la **liste d'adjacence** du graphe: une liste de listes décrivant les voisins de chaque noeud.
 
-If the graph is directed, a node B only appears in the list of a node A if there's an edge from A to B. For example, in our directed Twitter graph:
+Si le graphe est dirigé, un nœud B n'apparaît que dans la liste d'un nœud A s'il y a une arête de A à B. Par exemple, dans notre graphe Twitter dirigé:
 
 ![Directed graph example](twitter.png "")
 
@@ -30,9 +32,9 @@ If the graph is directed, a node B only appears in the list of a node A if there
 * **B:** A
 * **C:** B
 
-# Adjacency Matrix
+# Matrice d'adjacence d'un Graphe
 
-Graphs can also be represented with **adjacency matrices**. Here's the adjacency matrix of our cities graph:
+Les graphes peuvent également être représentés avec des ** matrices d'adjacence **. Voici la matrice d'adjacence du graphe de nos villes:
 
 |	|CAR	|BUC	|YOP	|BOG	|LET	|CAL	|ARM	|MED	|BUE	|PAS    |
 |---	|---	|---	|---	|---	|---	|---	|---	|---	|---	|---    |
@@ -47,11 +49,11 @@ Graphs can also be represented with **adjacency matrices**. Here's the adjacency
 |**BUE**|0	|0	|0	|0	|0	|1	|0	|1	|0	|1      |
 |**PAS**|0	|0	|0	|0	|0	|1	|0	|0	|1	|0      |
 
-Adjacency matrices have the graph nodes in both their rows and columns. The value on each cell shows if there exists an edge between the pair of nodes of the corresponding row and column. For example, the cell in row **BOG** and column **BUC** has a value of **1** because there is an edge between BOG and BUC, whereas the cell in row **PAS** and column **YOP** has a **0** because there's no edge between those two nodes.
+Les matrices d'adjacence ont les noeuds de graphe dans leurs lignes et colonnes. La valeur de chaque cellule indique s'il existe une arête entre la paire de nœuds de la ligne et de la colonne correspondantes. Par exemple, la cellule dans la ligne ** BOG ** et la colonne ** BUC ** a une valeur de ** 1 ** car il y a une arête entre BOG et BUC, alors que la cellule dans la ligne ** PAS ** et la colonne ** YOP ** a un ** 0 ** car il n'y a pas d'arête entre ces deux nœuds.
 
-A graph may have several adjacency matrices. In the example above, if you put the nodes in a different order, you'll have a new adjacency matrix of the same graph.
+Un graphe peut avoir plusieurs matrices d'adjacence. Dans l'exemple ci-dessus, si vous placez les nœuds dans un ordre différent, vous aurez une nouvelle matrice d'adjacence du même graphe.
 
-As you can see, if a graph is undirected, its adjacency matrices are symmetrical. On the other hand, if the graph is directed, the matrices are not symmetrical, as a 1 only appears in a cell if there's an edge from the node of the row to the node of the column. For example, the following is the adjacency matrix of our Twitter graph:
+Comme vous pouvez le voir, si un graphe n'est pas dirigé, ses matrices d'adjacence sont symétriques. D'autre part, si le graphe est dirigé, les matrices ne sont pas symétriques, car 1 n'apparaît dans une cellule que s'il y a une arête du noeud de la rangée au noeud de la colonne. Par exemple, voici la matrice d'adjacence de notre graphe Twitter:
 
 |   | A | B | C |
 |---|---|---|---|
@@ -59,12 +61,13 @@ As you can see, if a graph is undirected, its adjacency matrices are symmetrical
 |**B**|1|0|0|
 |**C**|0|1|0|
 
-# Exercise
-The shown Python function is used for obtaining some information about a given graph. The graph is passed to the function as an adjacency list, and the function returns the maximum degree of a node of the graph, the amount of loops in the graph and a boolean indicating whether the graph has parallel edges or not.
+# Exercice
 
-Fix the function so it returns the desired information. You may assume that the graph will at most have 5 nodes, numbered from 1 to 5.
+La fonction Python affichée est utilisée pour obtenir des informations sur un graphe donné. Le graphe est transmis à la fonction sous la forme d'une liste d'adjacence, et la fonction renvoie le degré maximal d'un nœud du graphe, la quantité de boucles dans le graphe et un booléen indiquant si le graphe a des arêtes parallèles ou non.
 
-@[The shown function should return some information about a given graph. Fix it so it does it correctly.]({"stubs": ["graphs.py"], "command": "python3 test_graphs.py"})
+Corrigez la fonction pour qu'elle renvoie les informations souhaitées. Vous pouvez supposer que le graphe aura au plus 5 nœuds, numérotés de 1 à 5.
 
-# Ending
-Congratulations! Now you have some fundamentals about graph theory. Now, you may learn more concepts abouth graphs, or start to learn some useful algorithms to apply them. The choice is yours!
+@[La fonction affichée doit renvoyer des informations sur un graphe donné. Corrigez la.]({"stubs": ["graphs.py"], "command": "python3 test_graphs.py"})
+
+# Fin
+Toutes nos félicitations! Vous avez maintenant quelques notions fondamentales sur la théorie des graphes. Maintenant, vous pouvez apprendre plus de concepts sur les graphes, ou commencer à apprendre quelques algorithmes utiles pour les appliquer. Le choix t'appartient!
