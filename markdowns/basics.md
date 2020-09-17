@@ -82,8 +82,6 @@ Supposons que nous voulions modéliser certains utilisateurs de Twitter avec un 
 
 OK cool. Nous pouvons modéliser les personnes comme des nœuds et les «follows» comme des arêtes. Cependant, cette fois nous avons besoin d'un ingrédient supplémentaire: la direction.
 
-In Twitter, following a person goes in one direction: you may follow one person, but that person may or may not follow you back. In our example, Carol follows Bob, but Bob doesn't follow Carol back. Something similar happens with personal relationships in real life: you may like a person, but that person may or may not like you back.
-
 Sur Twitter, suivre une personne est asymétrique: vous pouvez suivre une personne, mais cette personne peut ou pas vous suivre. Dans notre exemple, Carol suit Bob, mais Bob ne suit pas Carol. Quelque chose de similaire se produit avec les relations personnelles dans la vraie vie: vous pouvez aimer une personne, mais cette personne peut ou pas vous aimer.
 
 C'est à cause de cette asymétrie que notre graphe a besoin d'un moyen de transmettre qui suit qui. Ceci est fait avec des **arêtes orientées (fléchées)**:
